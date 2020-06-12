@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test
 
 internal class InMemoryHotelsTest {
     @Test
-    fun add() {
-        val aHotelId = 1
-        val aHotelName = "Hotel Name"
+    fun `Hotel is added on Add`() {
         val aHotel = Hotel(aHotelId, aHotelName)
         val hotels = InMemoryHotels()
 
@@ -18,4 +16,7 @@ internal class InMemoryHotelsTest {
         val newHotel = hotels.findById(aHotelId)
         assertThat(aHotel).isEqualTo(newHotel)
     }
+
+    private val aHotelId = 1
+    private val aHotelName = "Hotel Name"
 }

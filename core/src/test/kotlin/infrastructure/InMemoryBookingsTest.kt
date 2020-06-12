@@ -1,20 +1,21 @@
 package infrastructure
 
-import domain.models.Booking
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
-import java.util.*
+import testing.BookingFixture
+import testing.BookingFixture.aBookingId
+import testing.BookingFixture.aBookingWith
 
 internal class InMemoryBookingsTest {
 
     @Test
     fun `booking is added on add`() {
         val inMemoryBookings = InMemoryBookings()
-        val booking = Booking(aBookId, anEmployeeId, anHotelId, aRoomType, aCheckInDate, aCheckOutDate)
+        val booking = aBookingWith(aBookingId)
 
         inMemoryBookings.add(booking)
 
-        val newBooking = inMemoryBookings.get(aBookId)
+        val newBooking = inMemoryBookings.get(aBookingId)
         Assertions.assertThat(booking).isEqualTo(newBooking)
     }
 
@@ -29,11 +30,5 @@ internal class InMemoryBookingsTest {
         Assertions.assertThat(2).isEqualTo(nextId)
     }
 
-
-    private val aBookId = 221
-    private val anEmployeeId = 2
-    private val anHotelId = 1
-    private val aRoomType = "A Room Type"
-    private val aCheckInDate = Date()
-    private val aCheckOutDate = Date()
+    private val aBookingId = aBookingId()
 }

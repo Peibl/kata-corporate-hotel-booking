@@ -7,6 +7,8 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 import services.BookingService
+import testing.BookingFixture.aCheckInDate
+import testing.BookingFixture.aCheckOutDate
 
 import java.util.*
 
@@ -16,9 +18,9 @@ internal class BookingServiceTest {
     fun book() {
         every { bookings.nextId() } returns  aBookId
 
-       bookingService.book(anEmployeeId, anHotelId, aRoomType, aCheckInDate, aCheckOutDate)
+       bookingService.book(anEmployeeId, anHotelId, aRoomType, aCheckInDate(), aCheckOutDate())
 
-        verify { bookings.add(Booking(aBookId, anEmployeeId, anHotelId, aRoomType, aCheckInDate, aCheckOutDate)) }
+        verify { bookings.add(Booking(aBookId, anEmployeeId, anHotelId, aRoomType, aCheckInDate(), aCheckOutDate())) }
     }
 
     private val bookings = mockk<Bookings>(relaxed = true)
@@ -27,6 +29,4 @@ internal class BookingServiceTest {
     private val anEmployeeId = 2
     private val anHotelId = 1
     private val aRoomType = "A Room Type"
-    private val aCheckInDate = Date()
-    private val aCheckOutDate = Date()
 }

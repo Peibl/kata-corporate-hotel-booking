@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 internal class InMemoryEmployeesTest {
 
     @Test
-    fun add() {
+    fun `Employee is added on Add`() {
         val inMemoryEmployees = InMemoryEmployees()
         val employeeId = 5
         val employee = Employee(1, employeeId)
