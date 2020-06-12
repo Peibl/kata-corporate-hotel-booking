@@ -1,8 +1,9 @@
 package acceptance
 
-import domain.services.BookingService
-import domain.services.CompanyService
-import domain.services.HotelService
+import infrastructure.InMemoryBookings
+import services.BookingService
+import services.CompanyService
+import services.HotelService
 import infrastructure.InMemoryEmployees
 import infrastructure.InMemoryHotels
 import org.assertj.core.api.Assertions.assertThat
@@ -32,7 +33,7 @@ class BookARoomShould {
     private val aCheckInDate = Date()
     private val aCheckOutDate = Date()
     private val aCompanyId = 158
-    private val bookingService = BookingService()
+    private val bookingService = BookingService(InMemoryBookings())
     private val hotelService = HotelService(InMemoryHotels())
     private val companyService = CompanyService(InMemoryEmployees())
 }

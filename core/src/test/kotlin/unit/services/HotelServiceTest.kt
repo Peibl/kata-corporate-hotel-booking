@@ -1,10 +1,10 @@
-package domain.services
+package unit.services
 
 import domain.models.Hotel
 import domain.models.Hotels
-import domain.services.HotelService
 import io.mockk.*
 import org.junit.jupiter.api.Test
+import services.HotelService
 
 class HotelServiceTest {
 

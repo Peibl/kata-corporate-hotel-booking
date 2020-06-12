@@ -1,8 +1,7 @@
-package domain.services
+package services
 
 import domain.models.Hotel
 import domain.models.Hotels
-import infrastructure.InMemoryHotels
 
 class HotelService(private val hotels: Hotels) {
 

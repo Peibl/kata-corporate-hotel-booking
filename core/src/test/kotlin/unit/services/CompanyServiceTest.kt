@@ -1,10 +1,11 @@
-package domain.services
+package unit.services
 
 import domain.models.Employee
 import domain.models.Employees
 import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
+import services.CompanyService
 
 internal class CompanyServiceTest {
 

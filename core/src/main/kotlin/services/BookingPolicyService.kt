@@ -1,4 +1,4 @@
-package domain.services
+package services
 
 class BookingPolicyService {
     fun setEmployeePolicy(anEmployeeId: Int, listOf: List<Any>) {

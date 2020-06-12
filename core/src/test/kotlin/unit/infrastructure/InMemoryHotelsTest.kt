@@ -1,6 +1,7 @@
-package infrastructure
+package unit.infrastructure
 
 import domain.models.Hotel
+import infrastructure.InMemoryHotels
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
